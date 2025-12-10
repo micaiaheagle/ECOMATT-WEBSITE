@@ -1,0 +1,290 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_mycollection";
+    src: url("../fonts/flaticon_mycollection.woff2") format("woff2"),
+	url("../fonts/flaticon_mycollection.woff") format("woff"),
+	url("../fonts/flaticon_mycollection.eot") format("embedded-opentype"),
+	url("../fonts/flaticon_mycollection.ttf") format("truetype"),
+	url("../fonts/flaticon_mycollection.svg") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_mycollection !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-menu:before {
+    content: "\f101";
+}
+.flaticon-menu-1:before {
+    content: "\f102";
+}
+.flaticon-menu-2:before {
+    content: "\f103";
+}
+.flaticon-close:before {
+    content: "\f104";
+}
+.flaticon-close-1:before {
+    content: "\f105";
+}
+.flaticon-mail:before {
+    content: "\f106";
+}
+.flaticon-app:before {
+    content: "\f107";
+}
+.flaticon-search:before {
+    content: "\f108";
+}
+.flaticon-telephone:before {
+    content: "\f109";
+}
+.flaticon-left-arrow:before {
+    content: "\f10a";
+}
+.flaticon-right-quotation-mark:before {
+    content: "\f10b";
+}
+.flaticon-arrow-down-sign-to-navigate:before {
+    content: "\f10c";
+}
+.flaticon-remote-control-fast-forward-button:before {
+    content: "\f10d";
+}
+.flaticon-microphone:before {
+    content: "\f10e";
+}
+.flaticon-place:before {
+    content: "\f10f";
+}
+.flaticon-arrow:before {
+    content: "\f110";
+}
+.flaticon-arrows:before {
+    content: "\f111";
+}
+.flaticon-play-button:before {
+    content: "\f112";
+}
+.flaticon-right-arrow:before {
+    content: "\f113";
+}
+.flaticon-checked:before {
+    content: "\f114";
+}
+.flaticon-placeholder:before {
+    content: "\f115";
+}
+.flaticon-star:before {
+    content: "\f116";
+}
+.flaticon-instagram:before {
+    content: "\f117";
+}
+.flaticon-twitter:before {
+    content: "\f118";
+}
+.flaticon-facebook:before {
+    content: "\f119";
+}
+.flaticon-facebook-1:before {
+    content: "\f11a";
+}
+.flaticon-whatsapp:before {
+    content: "\f11b";
+}
+.flaticon-whatsapp-1:before {
+    content: "\f11c";
+}
+.flaticon-tik-tok:before {
+    content: "\f11d";
+}
+.flaticon-facebook-2:before {
+    content: "\f11e";
+}
+.flaticon-linkedin:before {
+    content: "\f11f";
+}
+.flaticon-linkedin-1:before {
+    content: "\f120";
+}
+.flaticon-viber:before {
+    content: "\f121";
+}
+.flaticon-snapchat:before {
+    content: "\f122";
+}
+.flaticon-snapchat-1:before {
+    content: "\f123";
+}
+.flaticon-gardening:before {
+    content: "\f124";
+}
+.flaticon-quality:before {
+    content: "\f125";
+}
+.flaticon-planting:before {
+    content: "\f126";
+}
+.flaticon-vegetable:before {
+    content: "\f127";
+}
+.flaticon-drone:before {
+    content: "\f128";
+}
+.flaticon-tractor:before {
+    content: "\f129";
+}
+.flaticon-plant:before {
+    content: "\f12a";
+}
+.flaticon-vegetable-1:before {
+    content: "\f12b";
+}
+.flaticon-milk:before {
+    content: "\f12c";
+}
+.flaticon-farmland:before {
+    content: "\f12d";
+}
+.flaticon-commodity:before {
+    content: "\f12e";
+}
+.flaticon-customer:before {
+    content: "\f12f";
+}
+.flaticon-farmer:before {
+    content: "\f130";
+}
+.flaticon-healthy-food:before {
+    content: "\f131";
+}
+.flaticon-share:before {
+    content: "\f132";
+}
+.flaticon-send:before {
+    content: "\f133";
+}
+.flaticon-write:before {
+    content: "\f134";
+}
+.flaticon-maps-and-flags:before {
+    content: "\f135";
+}
+.flaticon-placeholder-1:before {
+    content: "\f136";
+}
+.flaticon-email:before {
+    content: "\f137";
+}
+.flaticon-phone-call:before {
+    content: "\f138";
+}
+.flaticon-open:before {
+    content: "\f139";
+}
+.flaticon-location:before {
+    content: "\f13a";
+}
+.flaticon-shopping-cart:before {
+    content: "\f13b";
+}
+.flaticon-shopping-bag:before {
+    content: "\f13c";
+}
+.flaticon-shopping-bag-1:before {
+    content: "\f13d";
+}
+.flaticon-shopping-cart-1:before {
+    content: "\f13e";
+}
+.flaticon-farmer-1:before {
+    content: "\f13f";
+}
+.flaticon-wheat:before {
+    content: "\f140";
+}
+.flaticon-check-mark:before {
+    content: "\f141";
+}
+.flaticon-check:before {
+    content: "\f142";
+}
+.flaticon-arrow-up:before {
+    content: "\f143";
+}
+.flaticon-swirly-scribbled-arrow:before {
+    content: "\f144";
+}
+.flaticon-farm:before {
+    content: "\f145";
+}
+.flaticon-minus:before {
+    content: "\f146";
+}
+.flaticon-plus:before {
+    content: "\f147";
+}
+.flaticon-customer-service:before {
+    content: "\f148";
+}
+.flaticon-laptop:before {
+    content: "\f149";
+}
+.flaticon-farmer-2:before {
+    content: "\f14a";
+}
+.flaticon-license:before {
+    content: "\f14b";
+}
+.flaticon-delivery-car:before {
+    content: "\f14c";
+}
+.flaticon-leaf:before {
+    content: "\f14d";
+}
+.flaticon-leaf-1:before {
+    content: "\f14e";
+}
+.flaticon-sprout:before {
+    content: "\f14f";
+}
+.flaticon-user:before {
+    content: "\f150";
+}
+.flaticon-comment:before {
+    content: "\f151";
+}
+.flaticon-bubble-chat:before {
+    content: "\f152";
+}
+.flaticon-next:before {
+    content: "\f153";
+}
+.flaticon-left-chevron:before {
+    content: "\f154";
+}
+.flaticon-chevron:before {
+    content: "\f155";
+}
+.flaticon-search-1:before {
+    content: "\f156";
+}
+
