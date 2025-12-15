@@ -3,15 +3,16 @@
 
     $(window).on("load", function () {
         if ($('.hero-swiper').length) {
+
             // 1. Initialize Swiper
             var heroSwiper = new Swiper('.hero-swiper', {
                 effect: 'creative',
                 speed: 1000,
                 parallax: true,
                 loop: true,
-                // Configure autoplay but controlled manually
+                // Enable autoplay but we will stop it manually
                 autoplay: {
-                    delay: 2000, // 2s per slide (for images)
+                    delay: 3000,
                     disableOnInteraction: false,
                 },
                 creativeEffect: {
@@ -28,55 +29,73 @@
                     },
                 },
                 on: {
-                    init: function (swiper) {
-                        swiper.autoplay.stop();
-                        handleSlideLogic(swiper);
-                    },
                     slideChangeTransitionStart: function (swiper) {
                         handleSlideLogic(swiper);
                     }
+                    // We handle init manually below
                 }
             });
 
+            // 2. Initial Check (Page Load)
+            heroSwiper.autoplay.stop(); // Stop immediately
+
+            // Swiper's loop mode might mean activeIndex is not 0, but it points to the active slide.
+            // We need to find the video in the *currently active* slide.
+            var activeSlide = $(heroSwiper.slides[heroSwiper.activeIndex]);
+            var firstSlideVideo = activeSlide.find('video').get(0);
+
+            if (firstSlideVideo) {
+                // Scenario: Page loads on Video Slide
+                firstSlideVideo.currentTime = 0;
+                firstSlideVideo.muted = true;
+                var playPromise = firstSlideVideo.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.warn("Autoplay blocked:", error);
+                        heroSwiper.slideNext();
+                    });
+                }
+
+                // Wait for End
+                $(firstSlideVideo).off('ended').on('ended', function () {
+                    heroSwiper.slideNext();
+                    heroSwiper.autoplay.start();
+                });
+            } else {
+                // Page starts on an image (unlikely if Slide 1 is video, but possible with loop logic)
+                heroSwiper.autoplay.start();
+            }
+
+            // 3. Logic for Slide Changes (Loop / Transitions)
             function handleSlideLogic(swiper) {
-                // 1. Pause ANY playing video in the slider (cleanup)
+                // Pause all videos to be safe
                 $('.hero-swiper video').each(function () {
                     this.pause();
                     this.currentTime = 0;
                 });
 
-                // 2. Identify Active Slide
                 var activeSlide = $(swiper.slides[swiper.activeIndex]);
                 var videoElement = activeSlide.find('video').get(0);
 
                 if (videoElement) {
-                    // --- SCENARIO A: VIDEO SLIDE ---
-                    swiper.autoplay.stop(); // Kill timer immediately
+                    // Video Slide
+                    swiper.autoplay.stop();
 
-                    // Play Video
                     videoElement.currentTime = 0;
                     videoElement.muted = true;
-                    var playPromise = videoElement.play();
+                    videoElement.play();
 
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            console.warn("Autoplay blocked:", error);
-                            // Fallback if video fails
-                            swiper.slideNext();
-                        });
-                    }
-
-                    // Strict Wait for 'ended'
                     $(videoElement).off('ended').on('ended', function () {
                         swiper.slideNext();
+                        swiper.autoplay.start();
                     });
-
                 } else {
-                    // --- SCENARIO B: IMAGE SLIDE ---
-                    // Resume timer for normal slides
+                    // Image Slide
                     swiper.autoplay.start();
                 }
             }
+
         }
     });
 
