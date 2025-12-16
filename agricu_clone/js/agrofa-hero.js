@@ -31,6 +31,24 @@
                 on: {
                     slideChangeTransitionStart: function (swiper) {
                         handleSlideLogic(swiper);
+
+                        // Force Animation Restart Logic (Robust)
+                        // 1. Reset ALL overlays first (to be safe)
+                        document.querySelectorAll('.video-text-overlay').forEach(el => {
+                            el.classList.remove('animate-active');
+                        });
+
+                        // 2. Find the Active Slide's overlay
+                        var activeSlide = $(swiper.slides[swiper.activeIndex]);
+                        var activeOverlay = activeSlide.find('.video-text-overlay').get(0);
+
+                        if (activeOverlay) {
+                            // If we are on a slide that has this overlay (Video Slide)
+                            // Add class with slight delay
+                            setTimeout(() => {
+                                activeOverlay.classList.add('animate-active');
+                            }, 50);
+                        }
                     }
                     // We handle init manually below
                 }
@@ -38,6 +56,15 @@
 
             // 2. Initial Check (Page Load)
             heroSwiper.autoplay.stop(); // Stop immediately
+
+            // Initial Animation Trigger if starting on Slide 0
+            if (heroSwiper.activeIndex === 0) {
+                var activeSlide = $(heroSwiper.slides[heroSwiper.activeIndex]);
+                var initialOverlay = activeSlide.find('.video-text-overlay').get(0);
+                if (initialOverlay) {
+                    initialOverlay.classList.add('animate-active');
+                }
+            }
 
             // Swiper's loop mode might mean activeIndex is not 0, but it points to the active slide.
             // We need to find the video in the *currently active* slide.
