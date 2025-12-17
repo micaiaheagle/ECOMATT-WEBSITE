@@ -9499,16 +9499,29 @@
 }
 
 .feature-one__item-bg {
-	background-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.9);
+	/* Semi-transparent */
+	backdrop-filter: blur(10px);
+	/* Glass blur */
 	border-radius: 9px;
-	box-shadow: rgba(191, 191, 191, 0.4) 0px 0px 28px 0px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+	/* Soft floating shadow */
 	padding: 45px 20px 56px;
 	position: relative;
-	transition: all 500ms ease;
+	transition: all 400ms ease;
+	border-bottom: 3px solid transparent;
+	/* Prepare for green accent */
 }
 
 .feature-one__item-bg:hover {
-	transform: translateY(-10px);
+	transform: translateY(-15px);
+	/* Strong lift */
+	background-color: rgba(255, 255, 255, 1);
+	/* Solidify on hover */
+	box-shadow: 0 20px 50px rgba(87, 162, 0, 0.15);
+	/* Greenish shadow */
+	border-bottom: 3px solid #57a200;
+	/* Ecomatt Green Accent */
 }
 
 .feature-one__cricle-icon {
@@ -9529,8 +9542,11 @@
 }
 
 .feature-one__item-bg:hover .feature-one__cricle-icon {
-	background-color: rgb(12, 119, 53);
-	border-color: rgb(253, 214, 31);
+	background-color: #57a200;
+	/* Ecomatt Green */
+	border-color: #57a200;
+	box-shadow: 0 0 20px rgba(87, 162, 0, 0.4);
+	/* Icon Glow */
 }
 
 .feature-one__icon {
@@ -10368,19 +10384,8 @@
 	padding-bottom: 282px;
 }
 
-/* Hero Video Overlay */
-.hero-video-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.1);
-	z-index: 5;
-	pointer-events: none;
-}
-
-/* Cinematic Text Overlay Styles (Alive Upgrade) */
+/* Hero Video Overlay (Replaces previous .video-text-overlay) */
+/* Cinematic Text Overlay Styles (Restored) */
 .video-text-overlay {
 	position: absolute;
 	top: 50%;
@@ -10392,6 +10397,7 @@
 	pointer-events: none;
 }
 
+/* Base Style for Strong Text */
 /* Base Style for Strong Text */
 .cinematic-text {
 	font-family: 'Outfit', sans-serif;
@@ -10410,17 +10416,11 @@
 	text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 	letter-spacing: 2px;
 
-	/* Center Position */
+	/* Center Position (Restored) */
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
-	/* Flex Center for Multi-line blocks */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 
 	/* Initial State */
 	opacity: 0;

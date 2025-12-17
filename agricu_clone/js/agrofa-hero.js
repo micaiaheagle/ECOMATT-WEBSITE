@@ -127,3 +127,19 @@
     });
 
 })(jQuery);
+
+/* =========================================
+   Parallax Scroll for About One Section
+   ========================================= */
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const tomato = document.querySelector('.about-one_tomato');
+    const leaf = document.querySelector('.about-one_leaf');
+    const mainImage = document.querySelector('.about-one_image-outer');
+
+    // Only animate if elements exist and are in viewport (simple check)
+    if(tomato) tomato.style.transform = 	ranslateY(px);
+    if(leaf) leaf.style.transform = 	ranslateY(px);
+    // Main image moves slightly opposite for depth
+    if(mainImage) mainImage.style.transform = 	ranslateY(px);
+});
