@@ -1,0 +1,1144 @@
+/*--------------------------------------------------------------
+# Farmology Scoped Styles & Variables
+--------------------------------------------------------------*/
+.farmology-scope {
+    --farmology-font: "Poppins", sans-serif;
+    --farmology-font-two: "Outfit", sans-serif;
+    --farmology-font-three: "Caveat", cursive;
+    --farmology-gray: #68584b;
+    --farmology-gray-rgb: 104, 88, 75;
+    --farmology-base: #f5cb4b;
+    --farmology-base-rgb: 245, 203, 75;
+    --farmology-black: #57a200;
+    --farmology-black-rgb: 25, 15, 6;
+    --farmology-extra: #57a200;
+    --farmology-extra-rgb: 68, 44, 38;
+    --farmology-primary: #f6f2e4;
+    --farmology-primary-rgb: 246, 242, 228;
+    --farmology-secondary: #388E3C;
+    --farmology-secondary-rgb: 56, 142, 60;
+    --farmology-white: #ffffff;
+    --farmology-white-rgb: 255, 255, 255;
+    --farmology-bdr-radius: 5px;
+
+    /* Reset typography within scope */
+    font-family: var(--farmology-font);
+    color: var(--farmology-gray);
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.farmology-scope h1,
+.farmology-scope h2,
+.farmology-scope h3,
+.farmology-scope h4,
+.farmology-scope h5,
+.farmology-scope h6 {
+    font-family: var(--farmology-font-two);
+    color: var(--farmology-black);
+    margin-top: 0;
+}
+
+/* Ensure container matches source within scope if needed */
+@media (min-width: 1320px) {
+    .farmology-scope .container {
+        max-width: 1320px;
+    }
+}
+
+/*==============================================
+    Products One (Renamed to farmology-products-one)
+===============================================*/
+.farmology-products-one {
+    position: relative;
+    display: block;
+    padding: 120px 0 90px;
+    z-index: 2;
+}
+
+.farmology-products-one__single {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.farmology-products-one__img-box {
+    position: relative;
+    display: block;
+}
+
+.farmology-products-one__img {
+    position: relative;
+    display: block;
+    border-top-left-radius: var(--farmology-bdr-radius);
+    border-top-right-radius: var(--farmology-bdr-radius);
+    overflow: hidden;
+}
+
+.farmology-products-one__img::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-delay: .1s;
+    transition-timing-function: ease-in-out;
+    transition-duration: .7s;
+    transition-property: all;
+    background: rgba(var(--farmology-black-rgb), 0.6);
+    opacity: 0;
+    z-index: 1;
+    content: "";
+}
+
+.farmology-products-one__single:hover .farmology-products-one__img::before {
+    opacity: 1;
+}
+
+.farmology-products-one__img img {
+    width: 100%;
+    border-top-left-radius: var(--farmology-bdr-radius);
+    border-top-right-radius: var(--farmology-bdr-radius);
+    transform: scale3d(1, 1, 1);
+    transition: transform 1s ease-in-out;
+}
+
+.farmology-products-one__single:hover .farmology-products-one__img img {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.farmology-products-one__content {
+    position: relative;
+    display: block;
+    background-color: var(--farmology-white);
+    box-shadow: 0px 0px 48.51px 0.49px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-bottom-left-radius: var(--farmology-bdr-radius);
+    border-bottom-right-radius: var(--farmology-bdr-radius);
+}
+
+.farmology-products-one__icon-and-title {
+    position: relative;
+    display: block;
+    background-color: var(--farmology-extra);
+    padding: 25px 50px 31px;
+    z-index: 1;
+}
+
+.farmology-products-one__icon-and-title::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px dashed rgba(var(--farmology-primary-rgb), .30);
+    border-radius: var(--farmology-bdr-radius);
+    z-index: -1;
+}
+
+.farmology-products-one__icon-and-title::after {
+    content: "";
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    width: 80px;
+    height: 10px;
+    background-color: var(--farmology-extra);
+    transform: translateX(-50%);
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.farmology-products-one__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 56px;
+    background-color: var(--farmology-extra);
+    bottom: -41px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    z-index: 2;
+}
+
+.farmology-products-one__icon::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 80px;
+    height: 47px;
+    border-left: 1px dashed rgba(var(--farmology-primary-rgb), .50);
+    border-right: 1px dashed rgba(var(--farmology-primary-rgb), .50);
+    border-bottom: 1px dashed rgba(var(--farmology-primary-rgb), .50);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    z-index: -1;
+}
+
+.farmology-products-one__icon span {
+    position: relative;
+    display: inline-block;
+    font-size: 42px;
+    color: var(--farmology-base);
+    top: -15px;
+    transition: all 500ms linear;
+    transition-delay: 0.1s;
+}
+
+.farmology-products-one__single:hover .farmology-products-one__icon span {
+    -webkit-animation-name: wobble-horizontal-hover;
+    animation-name: wobble-horizontal-hover;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.farmology-products-one__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.farmology-products-one__title a {
+    color: var(--farmology-white);
+}
+
+.farmology-products-one__title a:hover {
+    color: var(--farmology-base);
+}
+
+.farmology-products-one__text-and-read-more {
+    position: relative;
+    display: block;
+    padding: 56px 30px 22px;
+    border-bottom-left-radius: var(--farmology-bdr-radius);
+    border-bottom-right-radius: var(--farmology-bdr-radius);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.farmology-products-one__text {
+    margin-bottom: 8px;
+}
+
+.farmology-products-one__read-more {
+    position: relative;
+    display: inline-block;
+}
+
+.farmology-products-one__read-more a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--farmology-extra);
+    font-weight: 500;
+}
+
+.farmology-products-one__read-more a:hover {
+    color: var(--farmology-base);
+}
+
+.farmology-products-one__read-more a>span {
+    color: var(--farmology-base);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.farmology-products-one__text-and-read-more-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.08;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/*==============================================
+    Project One (Renamed to farmology-project-one)
+===============================================*/
+.farmology-project-one {
+    position: relative;
+    display: block;
+    padding: 120px 0 135px;
+    z-index: 1;
+}
+
+.farmology-project-one__single {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.farmology-project-one__img-box {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.farmology-project-one__img {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--farmology-bdr-radius);
+    z-index: 1;
+}
+
+.farmology-project-one__img::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: var(--farmology-bdr-radius);
+    background: linear-gradient(0deg, rgba(68, 44, 38, 1) 13%, rgba(253, 187, 45, 0) 100%);
+    z-index: 1;
+}
+
+.farmology-project-one__img::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px dashed rgba(var(--farmology-primary-rgb), 80);
+    border-radius: var(--farmology-bdr-radius);
+    z-index: 1;
+}
+
+.farmology-project-one__img img {
+    width: 100%;
+    border-radius: var(--farmology-bdr-radius);
+    transform: scale(1.0);
+    transition: all 1000ms ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__img img {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.farmology-project-one__content {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    z-index: 2;
+}
+
+.farmology-project-one__sub-title {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: var(--farmology-font-three);
+    color: var(--farmology-base);
+    opacity: 1;
+    transform: translateY(0);
+    transition: background-color 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__sub-title {
+    opacity: 0;
+    transform: translateY(50px);
+    transition-delay: 100ms;
+}
+
+.farmology-project-one__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    text-transform: capitalize;
+    margin: 3px 0 12px;
+    opacity: 1;
+    transform: translatey(0px);
+    transition: background-color 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__title {
+    opacity: 0;
+    transform: translatey(-60px);
+    transition-delay: 200ms;
+}
+
+.farmology-project-one__title a {
+    color: var(--farmology-white);
+}
+
+.farmology-project-one__title a:hover {
+    color: var(--farmology-base);
+}
+
+.farmology-project-one__arrow {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: background-color 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__arrow {
+    opacity: 1;
+    transform: translateY(0%);
+    transition-delay: 900ms;
+}
+
+.farmology-project-one__arrow a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: var(--farmology-primary);
+    border-radius: 50%;
+    font-size: 16px;
+    color: var(--farmology-black);
+}
+
+.farmology-project-one__arrow a:hover {
+    background-color: var(--farmology-base);
+    color: var(--farmology-extra);
+}
+
+.farmology-project-one__content-2 {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    text-align: center;
+    z-index: 2;
+    padding: 30px 35px 30px;
+}
+
+.farmology-project-one__sub-title-2 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: var(--farmology-font-three);
+    color: var(--farmology-base);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: background-color 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__sub-title-2 {
+    opacity: 1;
+    transform: translateY(0%);
+    transition-delay: 500ms;
+}
+
+.farmology-project-one__title-2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    text-transform: capitalize;
+    margin: 3px 0 10px;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: background-color 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__title-2 {
+    opacity: 1;
+    transform: translateX(0%);
+    transition-delay: 700ms;
+}
+
+.farmology-project-one__title-2 a {
+    color: var(--farmology-white);
+}
+
+.farmology-project-one__title-2 a:hover {
+    color: var(--farmology-base);
+}
+
+.farmology-project-one__text {
+    color: var(--farmology-white);
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translatex(60px);
+    transition: background-color 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.farmology-project-one__single:hover .farmology-project-one__text {
+    opacity: 1;
+    transform: translatex(0%);
+    transition-delay: 700ms;
+}
+
+/* Tall card for masonry layout */
+.farmology-project-one__single--tall,
+.farmology-project-one__single--tall .farmology-project-one__img-box,
+.farmology-project-one__single--tall .farmology-project-one__img {
+    height: 100%;
+}
+
+.farmology-project-one__single--tall .farmology-project-one__img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/*==============================================
+    Do And Donts (Renamed to farmology-do-and-donts)
+===============================================*/
+.farmology-do-and-donts {
+    position: relative;
+    display: block;
+    background-color: var(--farmology-extra);
+    padding: 100px 0 100px;
+    z-index: 1;
+}
+
+.farmology-do-and-donts__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(rgba(48, 30, 15, 0.85), rgba(48, 30, 15, 0.85)), url(../assets/images/backgrounds/field-texture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.farmology-do-and-donts__left {
+    position: relative;
+    display: block;
+}
+
+.farmology-do-and-donts__right {
+    position: relative;
+    display: block;
+}
+
+.farmology-do-and-donts__right .farmology-do-and-donts__single-title {
+    left: 40%;
+}
+
+.farmology-do-and-donts__single-title {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    width: 120px;
+    height: 120px;
+    background-color: var(--farmology-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+}
+
+.farmology-do-and-donts__single-title::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px dashed var(--farmology-extra);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.farmology-do-and-donts__single-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(var(--farmology-base-rgb), .50);
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.farmology-do-and-donts__single-title span {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--farmology-font-three);
+    color: var(--farmology-black);
+}
+
+.farmology-do-and-donts__single {
+    position: relative;
+    display: block;
+    text-align: center;
+    max-width: 158px;
+    background-color: var(--farmology-primary);
+    padding: 28px 25px 28px;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='180' height='190' viewBox='0 0 180 190'%3E%3Cimage xlink:href='data:image/png;base64,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' x='0' y='0' width='180' height='190'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-size: cover;
+    z-index: 1;
+}
+
+.farmology-do-and-donts__single-one {
+    position: relative;
+    display: block;
+    text-align: center;
+    max-width: 158px;
+    background-color: var(--farmology-primary);
+    padding: 28px 25px 28px;
+    margin-left: auto;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='180' height='190' viewBox='0 0 180 190'%3E%3Cimage xlink:href='data:image/png;base64,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' x='0' y='0' width='180' height='190'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-size: cover;
+    z-index: 1;
+}
+
+.farmology-do-and-donts__single-bg-shape {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    opacity: .15;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    z-index: -1;
+}
+
+.farmology-do-and-donts__icon span {
+    position: relative;
+    display: inline-block;
+}
+
+.farmology-do-and-donts__icon span {
+    position: relative;
+    display: inline-block;
+    font-size: 35px;
+    color: var(--farmology-extra);
+    font-weight: 600;
+}
+
+.farmology-do-and-donts__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.farmology-do-and-donts__single-1 {
+    margin-left: 90px;
+}
+
+.farmology-do-and-donts__single-2 {
+    margin-top: -35px;
+}
+
+.farmology-do-and-donts__single-3 {
+    margin-left: 90px;
+    margin-top: -35px;
+}
+
+.farmology-do-and-donts__single-4 {
+    position: absolute;
+    top: 0px;
+    right: -6px;
+}
+
+.farmology-do-and-donts__single-5 {
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+}
+
+.farmology-do-and-donts__single-6 {
+    margin-right: 90px;
+}
+
+.farmology-do-and-donts__single-7 {
+    margin-top: -35px;
+}
+
+.farmology-do-and-donts__single-8 {
+    margin-right: 90px;
+    margin-top: -35px;
+}
+
+.farmology-do-and-donts__single-9 {
+    position: absolute;
+    top: 0px;
+    left: -6px;
+}
+
+.farmology-do-and-donts__single-10 {
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+}
+
+.farmology-do-and-donts__middle {
+    position: relative;
+    display: block;
+    margin-top: 160px;
+    margin-left: -100px;
+    margin-right: -100px;
+}
+
+.farmology-do-and-donts__middle .section-title {
+    margin-bottom: 26px;
+}
+
+.farmology-do-and-donts__middle .section-title__tagline {
+    color: var(--farmology-primary);
+}
+
+.farmology-do-and-donts__middle .section-title__title {
+    color: var(--farmology-white);
+    font-size: 35px;
+}
+
+.farmology-do-and-donts__middle-text {
+    position: relative;
+    display: block;
+    text-align: center;
+    max-width: 350px;
+    margin: 0 auto;
+    color: rgba(var(--farmology-white-rgb), .50);
+}
+
+.farmology-do-and-donts__btn-box {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 21px;
+}
+
+.farmology-do-and-donts__btn-box .thm-btn {
+    color: var(--farmology-extra);
+    background-color: var(--farmology-base);
+    border-radius: 50px;
+    padding: 16px 45px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.farmology-do-and-donts__btn-box .thm-btn:hover {
+    background-color: var(--farmology-white);
+    color: var(--farmology-extra);
+}
+
+.farmology-do-and-donts__img {
+    position: absolute;
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.farmology-do-and-donts__img::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(0deg, rgba(68, 44, 38, 1) 15%, rgba(253, 187, 45, 0) 100%);
+    z-index: 2;
+}
+
+.farmology-do-and-donts__img img {
+    width: auto;
+    animation: topBottom 4s ease-in-out infinite;
+}
+
+.farmology-do-and-donts__single-shape-1 {
+    position: absolute;
+    top: 50%;
+    width: 1px;
+    left: 5px;
+    height: 65px;
+    border: 1px dashed rgba(var(--farmology-black-rgb), .40);
+    transform: translateY(-50%);
+}
+
+.farmology-do-and-donts__single-shape-1::before {
+    content: "";
+    position: absolute;
+    top: -65px;
+    left: 34px;
+    width: 1px;
+    height: 82px;
+    border: 1px dashed rgba(var(--farmology-black-rgb), .40);
+    transform: rotate(60deg);
+}
+
+.farmology-do-and-donts__single-shape-1::after {
+    content: "";
+    position: absolute;
+    bottom: -65px;
+    left: 34px;
+    width: 1px;
+    height: 82px;
+    border: 1px dashed rgba(var(--farmology-black-rgb), .40);
+    transform: rotate(-60deg);
+}
+
+.farmology-do-and-donts__single-shape-2 {
+    position: absolute;
+    top: 50%;
+    width: 1px;
+    right: 5px;
+    height: 65px;
+    border: 1px dashed rgba(var(--farmology-black-rgb), .40);
+    transform: translateY(-50%);
+}
+
+.farmology-do-and-donts__single-shape-2::before {
+    content: "";
+    position: absolute;
+    top: -65px;
+    right: 36px;
+    width: 1px;
+    height: 82px;
+    border: 1px dashed rgba(var(--farmology-black-rgb), .40);
+    transform: rotate(-60deg);
+}
+
+.farmology-do-and-donts__single-shape-2::after {
+    content: "";
+    position: absolute;
+    bottom: -65px;
+    right: 36px;
+    width: 1px;
+    height: 82px;
+    border: 1px dashed rgba(var(--farmology-black-rgb), .40);
+    transform: rotate(60deg);
+}
+
+@keyframes topBottom {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+/*--------------------------------------------------------------
+# Pricing One
+--------------------------------------------------------------*/
+.pricing-one {
+  position: relative;
+  display: block;
+  padding: 120px 0 0;
+  z-index: 1;
+}
+
+.pricing-one__single {
+  position: relative;
+  display: block;
+  background-color: var(--farmology-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 48.51px 0.49px;
+  border-radius: var(--farmology-bdr-radius);
+  margin-bottom: 30px;
+  z-index: 1;
+}
+
+.pricing-one__single-bg-shape {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.06;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  z-index: -1;
+}
+
+.pricing-one__single:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px dashed rgba(var(--farmology-extra-rgb), .30);
+  border-radius: var(--farmology-bdr-radius);
+  z-index: -1;
+}
+
+.pricing-one__top-inner {
+  position: relative;
+  display: flex;
+  background-color: var(--farmology-extra);
+  border-top-right-radius: var(--farmology-bdr-radius);
+  border-top-left-radius: var(--farmology-bdr-radius);
+  padding: 23px 30px 19px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.pricing-one__top-inner:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  border: 1px dashed rgba(var(--farmology-primary-rgb), .30);
+  border-radius: var(--farmology-bdr-radius);
+  z-index: -1;
+  border-bottom: 0;
+}
+
+.pricing-one__sub-title-and-price {
+  position: relative;
+  display: block;
+}
+
+.pricing-one__sub-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--farmology-primary);
+  text-transform: capitalize;
+}
+
+.pricing-one__price {
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 45px;
+  color: var(--farmology-base);
+  margin-top: 8px;
+}
+
+.pricing-one__price span {
+  font-size: 18px;
+  font-family: var(--farmology-font);
+  font-weight: 500;
+  color: var(--farmology-white);
+}
+
+.pricing-one__top-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 60px;
+  width: 100%;
+  height: 60px;
+  flex: 1;
+  background-color: var(--farmology-primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.pricing-one__top-icon:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px dashed var(--farmology-extra);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.pricing-one__top-icon span {
+  position: relative;
+  display: inline-block;
+  font-size: 32px;
+  color: var(--farmology-extra);
+}
+
+.pricing-one__point-and-btn {
+  position: relative;
+  display: block;
+  padding: 30px 30px 30px;
+  z-index: 1;
+}
+
+.pricing-one__points {
+  position: relative;
+  display: block;
+}
+
+.pricing-one__points li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(var(--farmology-extra-rgb), .30);
+  padding-bottom: 7px;
+}
+
+.pricing-one__points li+li {
+  margin-top: 12px;
+}
+
+.pricing-one__points li:last-child {
+  border-bottom: none;
+}
+
+.pricing-one__points-text-box {
+  position: relative;
+  display: block;
+}
+
+.pricing-one__points-text-box h5 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--farmology-extra);
+  margin-bottom: 2px;
+}
+
+.pricing-one__points li .icon {
+  position: relative;
+  display: inline-block;
+}
+
+.pricing-one__points li .icon-two {
+  position: relative;
+  display: inline-block;
+}
+
+.pricing-one__points li .icon span {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: var(--farmology-secondary);
+}
+
+.pricing-one__points li .icon-two span {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: #c31324
+}
+
+.pricing-one__btn-box {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-top: 11px;
+}
+
+.pricing-one__btn-box .thm-btn {
+  width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Thm Btn Css
+--------------------------------------------------------------*/
+.thm-btn {
+  position: relative;
+  display: inline-block;
+  color: var(--farmology-base);
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  background-color: var(--farmology-extra);
+  border-radius: var(--farmology-bdr-radius);
+  padding: 12px 30px 12px;
+  overflow: hidden;
+  font-family: var(--farmology-font);
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  z-index: 1;
+}
+
+.thm-btn:hover {
+  color: var(--farmology-extra);
+}
+
+.thm-btn i {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.hover-btn {
+  background-color: var(--farmology-base);
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  width: 26%;
+  z-index: -1;
+}
+
+.hover-bx {
+  left: 0;
+  -webkit-transition-delay: 0.105s;
+  transition-delay: 0.105s;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.hover-bx2 {
+  left: 25%;
+  -webkit-transition-delay: 0.105s;
+  transition-delay: 0.105s;
+}
+
+.hover-bx3 {
+  left: 50%;
+  -webkit-transition-delay: 0.105s;
+  transition-delay: 0.105s;
+}
+
+.hover-bx4 {
+  left: 75%;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  border-radius: 0 5px 5px 0;
+}
+
+.thm-btn:hover .hover-btn {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
